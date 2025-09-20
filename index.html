@@ -7,13 +7,13 @@
   <meta name="color-scheme" content="light dark" />
   <style>
     :root{
-      --bg: #0b1220;        /* fundo elegante escuro */
-      --card: #111827;      /* cards/botões */
-      --text: #e5e7eb;      /* texto principal */
-      --muted:#9aa3b2;      /* texto secundário */
-      --accent:#60a5fa;     /* destaque */
-      --ring:#1f2937;       /* borda sutil */
-      --radius: 18px;
+      --bg:#0b1220;      /* fundo elegante escuro */
+      --card:#111827;    /* cards/botões */
+      --text:#e5e7eb;    /* texto principal */
+      --muted:#9aa3b2;   /* texto secundário */
+      --ring:#1f2937;    /* borda sutil */
+      --accent:#60a5fa;  /* destaque */
+      --radius:18px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -22,9 +22,10 @@
     .wrap{max-width:520px;margin:0 auto;padding:18px}
 
     header{display:flex;flex-direction:column;align-items:center;gap:14px;margin:10px 0 12px}
+    /* ÚNICO campo para o logo (JPG) */
     #logo{height:54px;max-width:85%;object-fit:contain;filter:drop-shadow(0 2px 10px rgba(0,0,0,.35))}
 
-    .title{margin:2px 0 0;text-align:center}
+    .title{text-align:center;margin:2px 0 0}
     .title h1{margin:0;font-size:26px;letter-spacing:.2px}
     .title p{margin:6px 0 0;color:var(--muted);font-size:13px}
 
@@ -40,7 +41,7 @@
     .btn span{font-weight:800;font-size:18px;letter-spacing:.3px}
     .btn small{display:block;color:var(--muted);font-size:12px;margin-top:4px}
 
-    /* Diferenciação visual por obra (cores levemente distintas) */
+    /* tons diferentes por obra */
     .btn.atl{background:linear-gradient(135deg,#0f172a 0%, #1f2a44 100%)}
     .btn.ory{background:linear-gradient(135deg,#111827 0%, #22304a 100%)}
     .btn.ico{background:linear-gradient(135deg,#0f1b2d 0%, #1e3352 100%)}
@@ -50,15 +51,14 @@
 
     footer{margin:18px 0 6px;text-align:center;color:var(--muted);font-size:12px}
 
-    /* Toque confortável */
     @media (pointer:coarse){ .btn{padding:18px 18px} .btn span{font-size:19px} }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <!-- ÚNICO CAMPO DO LOGO: troque o src abaixo pelo caminho do arquivo do seu logo -->
-      <img id="logo" src="assets/system-logo.jpg" alt="Logo" />
+      <!-- Troque o caminho abaixo para o SEU JPG do logo -->
+      <img id="logo" src="assets/system-logo.jpg" alt="Logo System" />
       <div class="title">
         <h1>Painel de Obras</h1>
         <p>Situação geral • toque para abrir</p>
@@ -66,42 +66,28 @@
     </header>
 
     <main class="grid" aria-label="Lista de obras">
-      <a class="btn atl" href="https://rsscavalcanti-cmyk.github.io/Atl-ntico-Golf/" rel="noopener" target="_blank">
-        <div>
-          <span>Atlântico Golf</span>
-          <small>Quadro Kanban e suprimentos</small>
-        </div>
+      <a class="btn atl" href="https://rsscavalcanti-cmyk.github.io/Atl-ntico-Golf/" target="_blank" rel="noopener">
+        <div><span>Atlântico Golf</span><small>Quadro Kanban e suprimentos</small></div>
         <div class="pill">Abrir</div>
       </a>
 
-      <a class="btn ory" href="https://rsscavalcanti-cmyk.github.io/Orygem-/" rel="noopener" target="_blank">
-        <div>
-          <span>Orygem</span>
-          <small>Quadro Kanban e suprimentos</small>
-        </div>
+      <a class="btn ory" href="https://rsscavalcanti-cmyk.github.io/Orygem-/" target="_blank" rel="noopener">
+        <div><span>Orygem</span><small>Quadro Kanban e suprimentos</small></div>
         <div class="pill">Abrir</div>
       </a>
 
-      <a class="btn ico" href="https://rsscavalcanti-cmyk.github.io/Iconyc/" rel="noopener" target="_blank">
-        <div>
-          <span>Iconyc</span>
-          <small>Quadro Kanban e suprimentos</small>
-        </div>
+      <a class="btn ico" href="https://rsscavalcanti-cmyk.github.io/Iconyc/" target="_blank" rel="noopener">
+        <div><span>Iconyc</span><small>Quadro Kanban e suprimentos</small></div>
         <div class="pill">Abrir</div>
       </a>
 
-      <a class="btn wop" href="https://rsscavalcanti-cmyk.github.io/Woods-OX-Park/" rel="noopener" target="_blank">
-        <div>
-          <span>Woods / OX Park</span>
-          <small>Quadro Kanban e suprimentos</small>
-        </div>
+      <a class="btn wop" href="https://rsscavalcanti-cmyk.github.io/Woods-OX-Park/" target="_blank" rel="noopener">
+        <div><span>Woods / OX Park</span><small>Quadro Kanban e suprimentos</small></div>
         <div class="pill">Abrir</div>
       </a>
     </main>
 
-    <footer>
-      © System Engenharia — painel de acesso rápido
-    </footer>
+    <footer>© System Engenharia — painel de acesso rápido</footer>
   </div>
 </body>
 </html>
