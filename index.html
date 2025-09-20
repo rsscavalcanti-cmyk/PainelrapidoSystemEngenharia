@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Painel de Obras — System</title>
-  <meta name="color-scheme" content="light dark" />
+  <meta name="color-scheme" content="light" />
   <style>
     :root{
-      --bg:#0b1220;      /* fundo elegante escuro */
-      --card:#111827;    /* cards/botões */
-      --text:#e5e7eb;    /* texto principal */
-      --muted:#9aa3b2;   /* texto secundário */
-      --ring:#1f2937;    /* borda sutil */
-      --accent:#60a5fa;  /* destaque */
-      --radius:18px;
+      --bg: #ffffff;        /* fundo branco elegante */
+      --card: #f1f5f9;      /* cards/botões */
+      --text: #111827;      /* texto principal */
+      --muted:#64748b;      /* texto secundário */
+      --accent:#2563eb;     /* destaque */
+      --ring:#cbd5e1;       /* borda sutil */
+      --radius: 18px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -22,72 +22,83 @@
     .wrap{max-width:520px;margin:0 auto;padding:18px}
 
     header{display:flex;flex-direction:column;align-items:center;gap:14px;margin:10px 0 12px}
-    /* ÚNICO campo para o logo (JPG) */
-    #logo{height:54px;max-width:85%;object-fit:contain;filter:drop-shadow(0 2px 10px rgba(0,0,0,.35))}
+    #logo{height:54px;max-width:85%;object-fit:contain}
 
-    .title{text-align:center;margin:2px 0 0}
+    .title{margin:2px 0 0;text-align:center}
     .title h1{margin:0;font-size:26px;letter-spacing:.2px}
-    .title p{margin:6px 0 0;color:var(--muted);font-size:13px}
 
-    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:12px}
+    .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:20px}
 
     .btn{
       display:flex;align-items:center;justify-content:space-between;gap:10px;
       text-decoration:none;color:var(--text);background:var(--card);
       border:1px solid var(--ring);border-radius:var(--radius);
-      padding:16px 16px;position:relative;isolation:isolate;
-      box-shadow:0 8px 20px rgba(2,6,23,.35), inset 0 0 0 1px rgba(255,255,255,.02);
+      padding:20px 24px;position:relative;isolation:isolate;
+      box-shadow:0 6px 16px rgba(0,0,0,.08);
+      transition:transform .1s ease, box-shadow .1s ease;
     }
+    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.12)}
     .btn span{font-weight:800;font-size:18px;letter-spacing:.3px}
     .btn small{display:block;color:var(--muted);font-size:12px;margin-top:4px}
 
-    /* tons diferentes por obra */
-    .btn.atl{background:linear-gradient(135deg,#0f172a 0%, #1f2a44 100%)}
-    .btn.ory{background:linear-gradient(135deg,#111827 0%, #22304a 100%)}
-    .btn.ico{background:linear-gradient(135deg,#0f1b2d 0%, #1e3352 100%)}
-    .btn.wop{background:linear-gradient(135deg,#0e1a2a 0%, #23364f 100%)}
+    /* Diferenciação visual por obra */
+    .btn.atl{border-left:6px solid #0ea5e9}
+    .btn.ory{border-left:6px solid #16a34a}
+    .btn.ico{border-left:6px solid #9333ea}
+    .btn.wop{border-left:6px solid #f59e0b}
 
-    .pill{border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:6px 10px;font-size:12px;color:#dbeafe;background:rgba(96,165,250,.08)}
+    .pill{border:1px solid var(--accent);border-radius:999px;padding:6px 14px;font-size:12px;color:var(--accent);background:rgba(37,99,235,.1)}
 
-    footer{margin:18px 0 6px;text-align:center;color:var(--muted);font-size:12px}
-
-    @media (pointer:coarse){ .btn{padding:18px 18px} .btn span{font-size:19px} }
+    footer{margin:24px 0 6px;text-align:center;color:var(--muted);font-size:12px}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <!-- Troque o caminho abaixo para o SEU JPG do logo -->
-      <img id="logo" src="assets/system-logo.jpg" alt="Logo System" />
+      <!-- Campo para o LOGO: altere o src para o caminho da imagem -->
+      <img id="logo" src="assets/system-logo.png" alt="Logo System" />
       <div class="title">
         <h1>Painel de Obras</h1>
-        <p>Situação geral • toque para abrir</p>
       </div>
     </header>
 
     <main class="grid" aria-label="Lista de obras">
-      <a class="btn atl" href="https://rsscavalcanti-cmyk.github.io/Atl-ntico-Golf/" target="_blank" rel="noopener">
-        <div><span>Atlântico Golf</span><small>Quadro Kanban e suprimentos</small></div>
+      <a class="btn atl" href="https://rsscavalcanti-cmyk.github.io/Atl-ntico-Golf/" rel="noopener" target="_blank">
+        <div>
+          <span>Atlântico Golf</span>
+          <small>Quadro Kanban e suprimentos</small>
+        </div>
         <div class="pill">Abrir</div>
       </a>
 
-      <a class="btn ory" href="https://rsscavalcanti-cmyk.github.io/Orygem-/" target="_blank" rel="noopener">
-        <div><span>Orygem</span><small>Quadro Kanban e suprimentos</small></div>
+      <a class="btn ory" href="https://rsscavalcanti-cmyk.github.io/Orygem-/" rel="noopener" target="_blank">
+        <div>
+          <span>Orygem</span>
+          <small>Quadro Kanban e suprimentos</small>
+        </div>
         <div class="pill">Abrir</div>
       </a>
 
-      <a class="btn ico" href="https://rsscavalcanti-cmyk.github.io/Iconyc/" target="_blank" rel="noopener">
-        <div><span>Iconyc</span><small>Quadro Kanban e suprimentos</small></div>
+      <a class="btn ico" href="https://rsscavalcanti-cmyk.github.io/Iconyc/" rel="noopener" target="_blank">
+        <div>
+          <span>Iconyc</span>
+          <small>Quadro Kanban e suprimentos</small>
+        </div>
         <div class="pill">Abrir</div>
       </a>
 
-      <a class="btn wop" href="https://rsscavalcanti-cmyk.github.io/Woods-OX-Park/" target="_blank" rel="noopener">
-        <div><span>Woods / OX Park</span><small>Quadro Kanban e suprimentos</small></div>
+      <a class="btn wop" href="https://rsscavalcanti-cmyk.github.io/Woods-OX-Park/" rel="noopener" target="_blank">
+        <div>
+          <span>Woods / OX Park</span>
+          <small>Quadro Kanban e suprimentos</small>
+        </div>
         <div class="pill">Abrir</div>
       </a>
     </main>
 
-    <footer>© System Engenharia — painel de acesso rápido</footer>
+    <footer>
+      © System Engenharia — painel de acesso rápido
+    </footer>
   </div>
 </body>
 </html>
